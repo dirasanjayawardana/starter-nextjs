@@ -8,7 +8,21 @@ ChartJS.register(...registerables);
 
 const ChartArea = () => {
 
-    const dataBar: any = {
+    interface ChartDataset {
+        label: string;
+        data: number[];
+        backgroundColor: string;
+        borderColor: string;
+        borderWidth: number;
+        fill?: boolean;
+    }
+
+    interface ChartData {
+        labels: string[];
+        datasets: ChartDataset[];
+    }
+
+    const dataBar: ChartData  = {
         labels: ["item1", "item2", "item3", "item4", "item5", "item6", "item7"],
         datasets: [
             {
